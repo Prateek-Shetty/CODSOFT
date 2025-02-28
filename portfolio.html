@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Prateek Shetty</title>
+    <style>
+     
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    color: #fff;
+    overflow-x: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+
+header {
+    text-align: center;
+    padding: 2rem;
+    background: rgba(0, 0, 0, 0.7);
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    color: #ffcc00;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+header p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: auto;
+    opacity: 0.9;
+}
+
+
+nav {
+    position: sticky;
+    top: 0;
+    background: rgba(0, 0, 0, 0.85);
+    padding: 1rem;
+    text-align: center;
+    z-index: 1000;
+    transition: background 0.5s ease-in-out;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: #ffcc00;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: color 0.3s ease-in-out;
+    position: relative;
+}
+
+nav ul li a:hover {
+    color: #ffffff;
+    text-shadow: 0px 0px 8px #ffcc00;
+}
+
+section {
+    padding: 4rem;
+    text-align: center;
+    backdrop-filter: blur(5px);
+    background: rgba(0, 0, 0, 0.6);
+    margin: 2rem auto;
+    max-width: 90%;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+section:hover {
+    transform: scale(1.02);
+}
+
+
+img {
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto;
+    transition: transform 0.5s ease-in-out;
+}
+
+img:hover {
+    transform: rotateY(360deg);
+}
+
+
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.project-card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.5s ease-in-out, box-shadow 0.3s ease-in-out;
+    position: relative;
+    perspective: 1000px;
+}
+
+.project-card:hover {
+    transform: rotateY(10deg) scale(1.1);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+}
+
+
+a {
+    color: #ffcc00;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+a:hover {
+    text-shadow: 0px 0px 10px #ffcc00;
+}
+
+
+#contact a {
+    color: #ffcc00;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+#contact a:hover {
+    text-shadow: 0px 0px 10px #ffcc00;
+}
+
+
+footer {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 1rem;
+    text-align: center;
+}
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+button, .btn {
+    background: linear-gradient(135deg, #ffcc00, #ff5733);
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    color: white;
+}
+
+button:hover, .btn:hover {
+    transform: translateY(-3px) scale(1.1);
+    box-shadow: 0px 0px 15px rgba(255, 204, 0, 0.7);
+}
+
+
+@keyframes glowBorder {
+    0% { box-shadow: 0px 0px 5px #ffcc00; }
+    50% { box-shadow: 0px 0px 20px #ffcc00; }
+    100% { box-shadow: 0px 0px 5px #ffcc00; }
+}
+
+.project-card:hover {
+    animation: glowBorder 1.5s infinite alternate;
+}
+
+    </style>
+</head>
+    <body>
+    
+        <header>
+            <h1>Prateek Ratnakar Shetty</h1>
+            <p>I am currently pursuing BE in Computer Science Engineering at Dayananda Sagar College of Engineering, Bangalore. I am passionate about software development and currently looking for internship opportunities.</p>                                 
+        </header>
+    
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#achievements">Achievements</a></li>
+                <li><a href="#resume">Resume</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    
+        <section id="about">
+            <h2>About Me</h2>
+            <img src="./Data/prateek_image.jpg" alt="Prateek Ratnakar Shetty">
+            <p>I have skills in HTML, CSS, JavaScript, Bootstrap, Tailwind, C++, Java, and Python. I am currently learning React, Database Management, and Node.js.</p>
+        </section>
+    
+        <section id="skills">
+            <h2>Skills</h2>
+            <ul>
+                <li>HTML, CSS, JavaScript</li>
+                <li>Bootstrap, Tailwind CSS</li>
+                <li>C++, Java, Python</li>
+                <li>React (Learning)</li>
+                <li>Database Management, Node.js (Learning)</li>
+            </ul>
+        </section>
+    
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="projects-container">
+                <div class="project-card">
+                    <h3>Discord Bot (8hr Hackathon)</h3>
+                    <p>Built a Discord bot using Python.</p>
+                    <a href="https://github.com/Prateek-Shetty/SOUL-SOCIETY.git">GitHub Repository</a>
+                </div>
+                <div class="project-card">
+                    <h3>Study Organizer (24hr Hackathon)</h3>
+                    <p>Created using React and Firebase.</p>
+                    <a href="https://github.com/Vikas-N-2006/soul-society.git">GitHub Repository</a>
+                </div>
+                <div class="project-card">
+                    <h3>Japan Tourism Guide</h3>
+                    <p>Developed using HTML, CSS, and JavaScript.</p>
+                    <a href="https://github.com/Prateek-Shetty/WEB-project.git">GitHub Repository</a>
+                </div>
+                <div class="project-card">
+                    <h3>Airline Booking Application</h3>
+                    <p>Built using Java and MongoDB.</p>
+                    <a href="https://github.com/Prateek-Shetty/Airline.git">GitHub Repository</a>
+                </div>
+                <div class="project-card">
+                    <h3>Water Management</h3>
+                    <p>Developed a water management system (no GitHub link).</p>
+                </div>
+                <div class="project-card">
+                    <h3>YouTube Clone (In Progress)</h3>
+                    <p>A clone of YouTube with basic functionalities.</p>
+                    <a href="https://github.com/Prateek-Shetty/Youtube.git">GitHub Repository</a>
+                </div>
+            </div>
+        </section>
+    
+        <section id="achievements">
+            <h2>Achievements</h2>
+            <ul>
+                <li>Participated 8-hour Discord Bot Hackathon</li>
+                <li>Participated in 24-hour Study Organizer Hackathon</li>
+                <li>Certification in Web Development from infosyis spring board </li>
+                <li>Active participant in coding competitions and hackathons</li>
+                <li>member in coding club and chess club</li>
+            </ul>
+
+        </section>
+    
+        <section id="resume">
+            <h2>Resume</h2>
+            <a class="btn" href="./Data/Prateek Shetty Resume.docx" download>Download My Resume</a>
+        </section>
+    
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>Email: prateekshetty2552@gmail.com</p>
+            <p>LinkedIn: <a href="https://linkedin.com/in/prateek-shetty28" target="_blank">linkedin.com/in/prateek-shetty28</a></p>
+            <p>GitHub: <a href="https://github.com/Prateek-Shetty">https://github.com/Prateek-Shetty</a></p>
+        </section>
+    
+        <footer>
+            <p>&copy; 2025 Prateek Ratnakar Shetty. All rights reserved.</p>
+        </footer>
+    
+        <script >
+            
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
+
+
+window.addEventListener('scroll', function() {
+    const nav = document.querySelector('nav');
+    if (window.scrollY > 50) {
+        nav.style.padding = "0.5rem";
+        nav.style.background = "rgba(0, 0, 0, 0.9)";
+    } else {
+        nav.style.padding = "1rem";
+        nav.style.background = "rgba(0, 0, 0, 0.85)";
+    }
+});
+
+
+const sections = document.querySelectorAll('section');
+window.addEventListener('scroll', () => {
+    sections.forEach(sec => {
+        let top = window.scrollY;
+        let offset = sec.offsetTop - 500;
+        if (top > offset) {
+            sec.style.opacity = "1";
+            sec.style.transform = "translateY(0)";
+        }
+    });
+});
+
+        </script>
+    
+    </body>
+    </html>
+    
+    
+
+
