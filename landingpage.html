@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Organizer</title>
+    <style>
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background: linear-gradient(to bottom right, #e3f2fd, #bbdefb);
+            overflow-x: hidden; 
+        }
+
+        
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background: linear-gradient(135deg, #4CAF50, #2E7D32);
+            color: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            animation: fadeInDown 1s;
+        }
+
+        .logo {
+            font-size: 34px; 
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li {
+            margin: 0;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            transition: color 0.3s ease, transform 0.3s ease;
+            padding: 8px 16px;
+            border-radius: 5px; 
+        }
+
+        nav ul li a:hover {
+            background-color: rgba(255, 255, 255, 0.2); 
+            transform: scale(1.05);
+        }
+
+        
+        #carousel {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 60vh;
+            background: #f5f5f5;
+            position: relative;
+            overflow: hidden;
+            margin-top: 20px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 1s;
+        }
+
+        .carousel-container {
+            position: relative;
+            width: 90%;
+            max-width: 1200px;
+        }
+
+        .carousel-container img {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            border: none;
+            padding: 12px 18px;
+            cursor: pointer;
+            font-size: 32px; 
+            border-radius: 50%;
+            transition: background 0.3s ease-in-out, transform 0.3s;
+            z-index: 2; 
+        }
+
+        .carousel-btn:hover {
+            background: rgba(0, 0, 0, 0.9);
+            transform: scale(1.1);
+        }
+
+        .left {
+            left: 15px;
+        }
+
+        .right {
+            right: 15px;
+        }
+
+      
+        .features-container {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            padding: 50px;
+            flex-wrap: wrap;
+            animation: fadeInUp 1.5s;
+            background: #ffffffaa; 
+            backdrop-filter: blur(10px); 
+        }
+
+        .feature-box {
+            width: 300px;
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            text-align: center;
+            border: 1px solid #e0e0e0;
+        }
+
+        .feature-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+        }
+
+        .feature-box img {
+            border-radius: 10px;
+            max-width: 80px; 
+            transition: transform 0.3s ease-in-out; 
+        }
+
+        .feature-box:hover img {
+            transform: scale(1.1); 
+        }
+
+        
+        #contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        #contact-form input,
+        #contact-form textarea {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            transition: border 0.3s;
+        }
+
+        #contact-form input:focus,
+        #contact-form textarea:focus {
+            border: 1px solid #4CAF50; 
+            outline: none;
+        }
+
+        #contact-form button {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.3s;
+            width: 100%; 
+            font-weight: bold;
+            font-size: 16px; 
+        }
+
+        #contact-form button:hover {
+            background: #2E7D32; 
+            transform: translateY(-2px); 
+        }
+
+        
+        footer {
+            padding: 20px;
+            background: #4CAF50;
+            color: white;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+
+       
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                padding: 10px 20px;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 10px; 
+            }
+
+            .features-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav ul li {
+                margin: 0; 
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">📚 Study Organizer</div>
+        <nav>
+            <ul>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="carousel">
+        <div class="carousel-container">
+            <button class="carousel-btn left" onclick="prevImage()">&#10094;</button>
+            <img id="carousel-image" src="./Data/2.webp" alt="Study Organizer">
+            <button class="carousel-btn right" onclick="nextImage()">&#10095;</button>
+        </div>
+    </section>
+
+    <section id="features">
+        <h2>🚀 Key Features</h2>
+        <div class="features-container">
+            <div class="feature-box">
+                <img src="./Data/study-notebooks.jpg" height="100px" width="100px" alt="Study Planner">
+                <h3>📅 Smart Planner</h3>
+                <p>Organize your study schedule with ease.</p>
+            </div>
+            <div class="feature-box">
+                <img src="./Data/f0cf3ca5520b735df72753235ad4af57.jpg" height="100px" width="100px" alt="Notes">
+                <h3>📝 Quick Notes</h3>
+                <p>Save and access important study notes anytime.</p>
+            </div>
+            <div class="feature-box">
+                <img src="./Data/reminder.jpeg" height="100px" width="100px" alt="Reminders">
+                <h3>⏰ Reminders</h3>
+                <p>Get timely alerts for deadlines and exams.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="how-it-works">
+        <h2>🔍 How It Works</h2>
+        <div class="steps-container">
+            <div class="step">
+                <h3>1️⃣ Add Subjects</h3>
+                <p>Enter subjects, deadlines, and exam dates.</p>
+            </div>
+            <div class="step">
+                <h3>2️⃣ Plan Studies</h3>
+                <p>Set goals and create a structured study plan.</p>
+            </div>
+            <div class="step">
+                <h3>3️⃣ Stay on Track</h3>
+                <p>Use reminders and progress tracking to stay motivated.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>📬 Contact Us</h2>
+        <form id="contact-form">
+            <input type="text" id="name" placeholder="Your Name" required><br>
+            <input type="email" id="email" placeholder="Your Email" required><br>
+            <textarea id="message" placeholder="Your Message" required></textarea><br>
+            <button type="submit">Send Message</button>
+        </form>
+        <p id="form-message"></p>
+    </section>
+
+    <footer>
+        <p>© 2025 Study Organizer. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById("contact-form").addEventListener("submit", function (event) {
+            event.preventDefault();
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let message = document.getElementById("message").value;
+
+            if (name && email && message) {
+                document.getElementById("form-message").textContent = "✅ Thank you for your message!";
+                document.getElementById("contact-form").reset();
+            } else {
+                document.getElementById("form-message").textContent = "⚠️ Please fill in all fields.";
+            }
+        });
+
+        const images = [
+            "./Data/1.webp",
+            "./Data/2.webp",
+            "./Data/3.webp"
+        ];
+
+        let currentIndex = 0;
+
+        function showImage(index) {
+            const imgElement = document.getElementById("carousel-image");
+            imgElement.style.opacity = 0;
+            setTimeout(() => {
+                imgElement.src = images[index];
+                imgElement.style.opacity = 1;
+            }, 300);
+        }
+
+        function prevImage() {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            showImage(currentIndex);
+        }
+
+        function nextImage() {
+            currentIndex = (currentIndex + 1) % images.length;
+            showImage(currentIndex);
+        }
+
+        setInterval(nextImage, 5000);
+    </script>
+</body>
+
+</html>
